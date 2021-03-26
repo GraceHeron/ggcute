@@ -124,3 +124,29 @@ nintendo_sales %>%
 ```{r}
 nintendo_sales
 ```
+
+## \#Girlboss Alert
+
+I want to get better at R coding so this is just for funsies. I am a ggcute stan so I started with modifying Sharla's code for a different colour palette. I wanted something to rhyme with fairyfloss so naturally this gave creation to the girlboss theme `r emo::ji("girls")`. A quick google search of the term 'girlboss colour scheme' gave me a pinterest colour board that I copied (I have no original thoughts). 
+
+![](data/girlboss_inspo.jpg){width=20%}
+
+```{r}
+show_col(ggcute:::girlboss_colours)
+```
+
+Ta da! I had fun!
+
+```{r}
+ggplot(nintendo_sales, aes(x = sales_type, y = sales_million, colour = console)) +
+  geom_jitter(size = 5, alpha = 0.5) +
+  scale_colour_girlboss() +
+  theme_girlboss(base_size = 12) +
+  theme(
+    legend.position = "bottom",
+    legend.title = element_blank()
+  )
+```
+
+
+

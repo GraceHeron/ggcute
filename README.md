@@ -4,7 +4,6 @@
 # ggcute
 
 <!-- badges: start -->
-
 <!-- badges: end -->
 
 A collection of cute things to use with ggplot2.
@@ -51,8 +50,7 @@ show_col(ggcute:::fairyfloss_colours)
 
 <img src="man/figures/README-unnamed-chunk-3-1.png" width="75%" />
 
-You can use it in plots via
-`scale_fill_fairyfloss()`:
+You can use it in plots via `scale_fill_fairyfloss()`:
 
 ``` r
 ggplot(nintendo_sales, aes(x = sales_million, y = console, fill = sales_type)) +
@@ -67,8 +65,7 @@ ggplot(nintendo_sales, aes(x = sales_million, y = console, fill = sales_type)) +
 
 <img src="man/figures/README-unnamed-chunk-4-1.png" width="75%" />
 
-or `scale_colour_fairyfloss()` (“color” instead of colour works
-too):
+or `scale_colour_fairyfloss()` (“color” instead of colour works too):
 
 ``` r
 ggplot(nintendo_sales, aes(x = sales_type, y = sales_million, colour = console)) +
@@ -146,5 +143,37 @@ nintendo_sales
 #>  8 Wii             Software           921. 
 #>  9 Nintendo DS     Hardware           154. 
 #> 10 Nintendo DS     Software           949. 
-#> # … with 12 more rows
+#> # ... with 12 more rows
 ```
+
+## \#Girlboss Alert
+
+I want to get better at R coding so this is just for funsies. I am a
+ggcute stan so I started with modifying Sharla’s code for a different
+colour palette. I wanted something to rhyme with fairyfloss so naturally
+this gave creation to the girlboss theme 👩. A quick google search of the
+term ‘girlboss colour scheme’ gave me a pinterest colour board that I
+copied (I have no original thoughts).
+
+<img src="data/girlboss_inspo.jpg" style="width:20.0%" />
+
+``` r
+show_col(ggcute:::girlboss_colours)
+```
+
+<img src="man/figures/README-unnamed-chunk-9-1.png" width="75%" />
+
+Ta da! I had fun!
+
+``` r
+ggplot(nintendo_sales, aes(x = sales_type, y = sales_million, colour = console)) +
+  geom_jitter(size = 5, alpha = 0.5) +
+  scale_colour_girlboss() +
+  theme_girlboss(base_size = 12) +
+  theme(
+    legend.position = "bottom",
+    legend.title = element_blank()
+  )
+```
+
+<img src="man/figures/README-unnamed-chunk-10-1.png" width="75%" />

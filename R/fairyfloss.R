@@ -15,6 +15,7 @@
 #'   theme_fairyfloss()
 #' @importFrom ggplot2 element_rect element_line element_text element_blank theme theme_grey
 theme_fairyfloss <- function(base_size = 16, base_line_size = base_size / 22, base_rect_size = base_size / 22) {
+  windowsFonts("Courier" = windowsFont("Courier New"))
   theme_grey(base_size = base_size, base_family = "Courier", base_line_size, base_rect_size) +
     theme(
       plot.background = element_rect(fill = fairyfloss_col("dark_purple"), colour = fairyfloss_col("light_purple")),
